@@ -49,7 +49,7 @@ export class FactoryUtilsClass {
           seg.w *= exactW;
           seg.x = exactX;
           seg.h *= exactH;
-          seg.y = exactY;
+          seg.y = 0;
         });
 
         resolve(settingsCloned);

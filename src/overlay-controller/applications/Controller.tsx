@@ -265,7 +265,7 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
           e,
           currentStrategyBaseClassInstance.current
         );
-        currentStrategyBaseClassInstance.current.setObjectCreated(true);
+        currentStrategyBaseClassInstance.current?.setObjectCreated(true);
       }
     });
   }
@@ -520,7 +520,7 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
     gec.event = e;
     gec.type = type;
     gec.baseClassInstance = baseClassInstance;
-    props.eventChanges.emit(gec);
+    // props.eventChanges?.emit(gec);
   }
 
   return (
