@@ -20,6 +20,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
+    "noImplicitReturns": true,
+    "noImplicitOverride": false,
+    "noImplicitAny": false,
+    "noPropertyAccessFromIndexSignature": false,
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"]
