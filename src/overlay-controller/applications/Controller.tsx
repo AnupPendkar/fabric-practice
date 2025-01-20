@@ -62,13 +62,7 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
       new ObjectsGeneratorInstanceManageClass();
     rendererClass.current = new ControllerRendererClass(onAfterCanvasInit);
 
-    console.log(
-      objectsGeneratorInstanceManageClass.current,
-      rendererClass.current
-    );
-
     return () => {
-      console.log("destroyed");
       rendererClass.current?.clean();
     };
   }, []);
@@ -204,12 +198,12 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
       title: undefined,
       contextMenu: [
         {
-          imagePath: "assets/images/controllers/Delete.svg",
+          imagePath: "controllers/Delete.svg",
           name: ContextMenuAction.DELETE,
           visibility: true,
         },
         {
-          imagePath: "assets/images/controllers/Edit.svg",
+          imagePath: "controllers/Edit.svg",
           name: ContextMenuAction.SAVE,
           visibility: true,
         },
@@ -228,7 +222,6 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
    * * This call back fires when Canvas Rendering is completed
    */
   function onAfterCanvasInit(): void {
-    console.log('onAfterCanvasInit')
     FactoryUtilsClass.generateAndAdjustObjectsDim(
       rendererClass.current.canvasRef,
       props.controllerSettings,
@@ -316,12 +309,6 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
       for (let i = 0; i < removedFromCanvas?.length; i += 1) {
         const uuid = removedFromCanvas?.[i].uuid;
         objectsGeneratorInstanceManageClass.current?.dropInstanceByUUID(uuid);
-
-        if (i === removedFromCanvas?.length - 1) {
-          console.log(
-            "Unwanted Objects Removed , do not dispatched any events"
-          );
-        }
       }
       // raised events
     } else {
@@ -338,7 +325,6 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
    * @param rawInput
    */
   function onDrawRect(rawInput: ControllerObjectData, isNew = false): void {
-    console.log(rawInput);
     const factoryRect = FactoryUtilsClass.generateRect(rawInput);
     // if Drawind Mode the set it as Active else not
     if (isNew) {
@@ -526,7 +512,7 @@ const Controller: React.FC<ComponentProps> = (props: ComponentProps) => {
   return (
     <div
       ref={canvasWrapperRef}
-      className="position-relative grid justify-center"
+      className="position-relative grid justify-center items-center"
       style={{ width: "100%", height: "100%" }}
     >
       <canvas ref={CanvasRef} id="canvas" />

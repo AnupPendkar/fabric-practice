@@ -80,7 +80,6 @@ export class ControllerRendererClass extends ControllerBaseClass {
   }
 
   setOverlayBackground(ctrBGView: CtrBGView): void {
-    console.log(ctrBGView);
     FabricImage.fromURL(ctrBGView?.path).then(async (image) => {
       let scaleX = this.canvasRef.width / image.width;
       let scaleY = this.canvasRef.height / image.height;
@@ -103,7 +102,6 @@ export class ControllerRendererClass extends ControllerBaseClass {
         Y = (this.canvasRef.height - image.height * scaleY) / 2;
       }
 
-      console.log(X, Y, scaleX, scaleY);
       image.set({
         hoverCursor: "pointer",
         moveCursor: "pointer",
@@ -239,7 +237,6 @@ export class ControllerRendererClass extends ControllerBaseClass {
       moveCursor: "pointer",
       // renderOnAddRemove: false,
     });
-    console.log("came here", this.viewCanvasRef, this.canvasRef);
     this.setOverlayBackground(background);
 
     // Set canvas dimensions to fit the container

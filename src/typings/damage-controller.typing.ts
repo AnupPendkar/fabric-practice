@@ -13,19 +13,19 @@ export enum ContainerSideEnum {
 
 export type ContainerPerspectiveType = {
   side_id: ContainerSideEnum;
-  perspectives: Perspectives[];
+  perspectives: string[];
 };
 
 export enum Perspectives {
-  FRONT_LEFT = 'FTLT',
-  FRONT_RIGHT = 'FTRT',
-  BACK_MAIN = 'BK',
-  RIGHT_MAIN = 'RT',
-  RIGHT_FRONT = 'RTFT',
-  RIGHT_BACK = 'RTBK',
-  LEFT_MAIN = 'LT',
-  LEFT_FRONT = 'LTFT',
-  TOP_MAIN = 'TP',
+  FRONT_LEFT = "FTLT",
+  FRONT_RIGHT = "FTRT",
+  BACK_MAIN = "BK",
+  RIGHT_MAIN = "RT",
+  RIGHT_FRONT = "RTFT",
+  RIGHT_BACK = "RTBK",
+  LEFT_MAIN = "LT",
+  LEFT_FRONT = "LTFT",
+  TOP_MAIN = "TP",
 }
 
 export type ContainerSideSegmentInfo = {
@@ -75,19 +75,19 @@ export enum DamageCategory {
 }
 
 export enum LegendsColor {
-  MinorRust = '#0545e8',
-  Rust = '#3ae805',
-  MinorWarp = '#05e8d1',
-  Warp = '#e80505',
-  Minor_Scratch = '#e805d5',
-  Welded = '#d1e805',
-  CutHole = '#5a1d80',
-  PILLAR_DAMAGE = 'white',
-  ADD_NEW = '#191919',
-  HAS_MAJOR = '#FD8D82',
-  HAS_MINOR = '#FFD973',
-  HAS_NO_DAMAGE = '#C0C0C0',
-  PATCH = '#A67B5B',
+  MinorRust = "#0545e8",
+  Rust = "#3ae805",
+  MinorWarp = "#05e8d1",
+  Warp = "#e80505",
+  Minor_Scratch = "#e805d5",
+  Welded = "#d1e805",
+  CutHole = "#5a1d80",
+  PILLAR_DAMAGE = "white",
+  ADD_NEW = "#191919",
+  HAS_MAJOR = "#FD8D82",
+  HAS_MINOR = "#FFD973",
+  HAS_NO_DAMAGE = "#C0C0C0",
+  PATCH = "#A67B5B",
 }
 
 export type ContainerSideInfo = {
@@ -170,59 +170,65 @@ export type SegmentPoints = {
   confidence?: number;
 };
 
-export enum DamageTypeEnum  {
+export enum DamageTypeEnum {
   MINOR_DAMAGE = 0,
-  MAJOR_DAMAGE = 1
+  MAJOR_DAMAGE = 1,
 }
 
 export type DamageConfigTableType = {
-  damage_name: string,
-  damage_id: DamageTypeEnum,
-  is_configured: boolean,
-  is_notified: boolean,
-  type_of_damage: number,
-  color_code: string,
-  created_timestamp?: number,
+  damage_name: string;
+  damage_id: DamageTypeEnum;
+  is_configured: boolean;
+  is_notified: boolean;
+  type_of_damage: number;
+  color_code: string;
+  created_timestamp?: number;
   dynamicClassList: Array<string>;
-}
+};
 
 export type DamageConfigResponse = {
   notification?: Notifications;
   damage?: DamageConfig[];
-}
+};
 
 export type DamageConfig = {
-  damage_name: string,
-  damage_id: DamageTypeEnum,
-  is_configured: boolean,
-  is_notified: boolean,
-  type_of_damage: number,
-  color_code: string,
-}
+  damage_name: string;
+  damage_id: DamageTypeEnum;
+  is_configured: boolean;
+  is_notified: boolean;
+  type_of_damage: number;
+  color_code: string;
+};
 
 export type Email = {
- is_enabled :boolean,
- data: EmailData[]
-}
+  is_enabled: boolean;
+  data: EmailData[];
+};
 
-export type Notifications  = {
-  email: Email
-  dashboard: DashboardNotification
-}
+export type Notifications = {
+  email: Email;
+  dashboard: DashboardNotification;
+};
 
 export type EmailData = {
-  id?: number,
-  name: string,
-  email_address: string,
-  is_active?: boolean
-}
+  id?: number;
+  name: string;
+  email_address: string;
+  is_active?: boolean;
+};
 
 export type DashboardNotification = {
-  is_enabled: boolean
-}
+  is_enabled: boolean;
+};
 
 export type DamageDetailsType = {
-  transaction_id: string,
-  entity_id: string,
-  container_number: string
+  transaction_id: string;
+  entity_id: string;
+  container_number: string;
+};
+
+export enum DamageModuleEnum {
+  VIEW,
+  ADD_DAMAGES,
+  ADD_HEATMAP,
 }

@@ -320,12 +320,12 @@ export class SegmentParserClass {
           },
           contextMenu: [
             {
-              imagePath: "assets/images/controllers/controller_cancel.svg",
+              imagePath: "controllers/controller_cancel.svg",
               name: ContextMenuAction.DELETE,
               visibility: true,
             },
             {
-              imagePath: "assets/images/controllers/controller_save.svg",
+              imagePath: "controllers/controller_save.svg",
               name: ContextMenuAction.SAVE,
               visibility: true,
             },
@@ -386,12 +386,12 @@ export class SegmentParserClass {
           },
           contextMenu: [
             {
-              imagePath: "assets/images/controllers/controller_cancel.svg",
+              imagePath: "controllers/controller_cancel.svg",
               name: ContextMenuAction.DELETE,
               visibility: false,
             },
             {
-              imagePath: "assets/images/controllers/controller_save.svg",
+              imagePath: "controllers/controller_save.svg",
               name: ContextMenuAction.SAVE,
               visibility: false,
             },
@@ -543,12 +543,12 @@ export class SegmentParserClass {
             title: undefined,
             contextMenu: [
               {
-                imagePath: "assets/images/controllers/Delete.svg",
+                imagePath: "controllers/Delete.svg",
                 name: ContextMenuAction.DELETE,
                 visibility: false,
               },
               {
-                imagePath: "assets/images/controllers/Edit.svg",
+                imagePath: "controllers/Edit.svg",
                 name: ContextMenuAction.SAVE,
                 visibility: false,
               },
